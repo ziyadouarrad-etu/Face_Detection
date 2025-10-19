@@ -27,7 +27,7 @@ while True:
 
     #display the webcam with the detection.
 
-    cv2.imshow('Clever Programer Face Detector', frame)
+    cv2.imshow('Face Detector', frame)
     key=cv2.waitKey(1)
 
     #end the program.
