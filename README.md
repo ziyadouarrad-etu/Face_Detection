@@ -17,7 +17,8 @@ This project demonstrates basic computer vision and live webcam processing using
 ## 🧰 Requirements
 
 - Python 3.x  
-- OpenCV library (`opencv-python`)  
+- OpenCV library (`opencv-python`)
+- haarcascade_frontalface_default.xml in the same folder as your script (detection.py).
 
 Install OpenCV via pip:
 
@@ -81,45 +82,12 @@ python face_detect.py
 
 ---
 
-## 📄 Example Code Snippet
-
-```python
-import cv2
-
-# Load Haar Cascade classifier
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
-# Access webcam
-webcam = cv2.VideoCapture(0)
-
-while True:
-    success, frame = webcam.read()
-    if not success:
-        break
-
-    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray_frame, scaleFactor=1.1, minNeighbors=5)
-
-    for (x, y, w, h) in faces:
-        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-
-    cv2.imshow('Face Detector', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-webcam.release()
-cv2.destroyAllWindows()
-print("Code Completed!")
-```
-
----
-
 ## 📁 Project Structure
 
 ```
 face-detection/
 │
-├── face_detect.py                       # Main Python script
+├── detection.py                         # Main Python script
 ├── haarcascade_frontalface_default.xml  # Haar cascade model
 ├── myenv/                               # Virtual environment
 └── README.md                            # Project documentation
@@ -129,18 +97,14 @@ face-detection/
 
 ## 📸 Demo
 
-*(Add screenshots or a short GIF here showing face detection in action)*
+<img width="800" height="449" alt="Me and my friend with green rectangles around our faces." src="https://github.com/user-attachments/assets/efda927d-ee78-4377-b2e0-f8a73a29a4f8" />
 
 ---
 
 ## 🧑‍💻 Author
 
-**PoPolo**  
-GitHub: [https://github.com/<your-username>](https://github.com/<your-username>)
+**Ziyad Ouarrad**  
+GitHub: [https://github.com/Ziyadouarrad-etu](https://github.com/Ziyadouarrad-etu)
 
 ---
-
-## 📄 License
-
-This project is licensed under the **MIT License** — feel free to use, modify, and share.
 
